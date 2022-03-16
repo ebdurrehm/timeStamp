@@ -22,11 +22,9 @@ app.get("/", function (req, res) {
 //  empty date parameter
 app.get("/api", (req, res)=>{
   let date = new Date();
-  let UTC = date.getTime()+20000;
-  UTC = new Date(UTC);
-  UTS = UTC.toUTCString();
-  let UNIX = date.getTime()+20000;
-  res.json({ unix: UNIX, utc: UTS });
+  let UTC = date.toUTCString();
+  let UNIX = date.getTime();
+  res.json({ unix: UNIX, utc: UTC });
 })
 
 app.get("/api/:date", function (req, res) {
